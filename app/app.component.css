@@ -1,0 +1,63 @@
+.app-content {
+  padding: 20px;
+}
+
+.app-content md-card {
+  margin: 20px;
+}
+
+.custom-searchbar {
+  height: 29px;
+  width: 257px;
+  font-size: smaller;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  background-color: #009688;
+}
+
+.custom-notifications-container {
+  left: 50%;
+  position: relative;
+}
+
+.custom-avatar {
+  border-radius: 70px;
+  width:45px;
+  height:45px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.custom-avatar-label {
+  position: relative;
+  top: -5px;
+  font-size: smaller;
+}
+
+.custom-action-button {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+  min-width: 45px;
+}
+
+
+.custom-sidenav {
+  background-color: #003D37;
+  color: white;
+  font-size: bolder;
+}
+
+.custom-sidenav  span {
+  color: white;
+  font-size: bolder;
+}
+
+.custom-sidenav md-icon {
+  position: relative;
+  top:7px;
+  margin-right: 7px;
+}

@@ -1,0 +1,56 @@
+.custom-md-image{
+  position: relative;
+  top: -80px;
+  float: right;
+  z-index: 99;
+}
+
+.custom-alert-danger{
+  color: white;
+  font-size: bolder;
+  background-color: #A54D5C;
+  padding-top: 13px;
+  padding-right: 5px;
+  padding-bottom: 12px;
+  padding-left: 5px;
+  border-radius: 4px;
+}
+
+md-card {
+  height:100%;
+}
+
+.ficha-title {
+  width: 100%;
+  height: 20%;
+  top: -47px;
+  margin-left: 12px;
+}
+
+.ficha-indicador {
+  width: 62%;
+  height: 20%;
+  top: -47px;
+  padding-right: 40px;
+  margin-left: 12px;
+  
+}
+
+md-icon {
+  position: relative;
+  top:7px;
+  margin-right: 7px;
+}
+
+p {
+  overflow-x: initial !important;
+}
+
+md-card-subtitle {
+  font-size: 17px;
+}
+
+.custom-second-row {
+  top: -70px;
+}
+

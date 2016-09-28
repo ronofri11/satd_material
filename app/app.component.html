@@ -1,0 +1,49 @@
+<md-toolbar color="primary">
+  <button md-button class="custom-action-button" (click)="leftnav.toggle()">
+    <md-icon svgSrc="/app/shared/images/menu_white.svg"></md-icon>
+  </button>
+  <div class="custom-searchbar-container">
+    <md-icon style="top: 7px;position: relative;" svgSrc="/app/shared/images/search_white.svg"></md-icon>
+    <input #searchinput type="text" class="custom-searchbar" placeholder="    Buscar" value=""/>
+  </div>
+  <div class="custom-notifications-container">
+    <md-icon svgSrc="/app/shared/images/notifications_active_white.svg"></md-icon>
+    <img md-card-md-image class="custom-avatar" src="app/shared/images/avatar_veronica.jpg">
+    <label class="custom-avatar-label">Verónica Reyes</label>
+    <button md-button class="custom-action-button" (click)="leftnav.toggle()">
+      <md-icon svgSrc="/app/shared/images/more_white.svg"></md-icon>
+    </button>
+  </div>
+</md-toolbar>
+<md-sidenav-layout>
+  <md-sidenav #leftnav class="md-sidenav-left custom-sidenav" color="accent" mode="push">
+    <md-list >
+      <md-list-item>
+        <button md-button>
+          <span><md-icon svgSrc="/app/shared/images/explore_white.svg"></md-icon></span>
+          <span>DASHBOARD</span>
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-button>
+          <span><md-icon svgSrc="/app/shared/images/healing_white.svg"></md-icon></span>
+          <span>GESTION DE RETENCION</span>
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-button>
+            <span><md-icon svgSrc="/app/shared/images/list_white.svg"></md-icon></span>
+            <span>ESTUDIANTES</span>
+        </button>
+      </md-list-item>
+      <md-list-item>
+        <button md-button>
+          <span><md-icon svgSrc="/app/shared/images/equalizer_white.svg"></md-icon></span>
+          <span>REPORTES</span>
+        </button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+  <satd-app></satd-app>
+</md-sidenav-layout>
+    

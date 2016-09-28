@@ -1,0 +1,155 @@
+<div *ngIf="alumno" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img class="img-responsive" src="app/alumnos/shared/images/placeholder-person.jpg" title="{{ alumno.nombre | uppercase }}">
+                </div>
+                <div class="col-xs-4">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span>RUT:</span>
+                            <span>{{ alumno.cedula }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Nombre:</span>
+                            <span>{{ alumno.nombre }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Dirección:</span>
+                            <span>{{ alumno.direccion }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Comuna:</span>
+                            <span>{{ alumno.comuna }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Telefono:</span>
+                            <span>{{ alumno.telefono }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Email:</span>
+                            <span>{{ alumno.email }}</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>Edad:</span>
+                            <span>{{ alumno.atributos_alumno.edad }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="alert alert-danger col-xs-7"> ALERTA ACTIVA / Motivo: Económico </div>
+            </div>
+            <div class="row">
+                <div class="btn btn-primary">Desactivar Alerta</div>
+                <div class="btn btn-default">Ingresar Actividad</div>
+                <div class="btn btn-default">Estado Académico</div>
+            </div>
+        </div>
+        <div *ngIf="historialMatriculas" class="col-xs-6">
+            <ul class="historial">
+                <li *ngFor="let periodo of historialMatriculas">
+                    <span>Periodo:</span>
+                    <span>{{ periodo.periodo }}</span>
+                    <span>Asistencia:</span>
+                    <span>{{ periodo.asistencia }}</span>
+                    <span>Promedio:</span>
+                    <span>{{ periodo.promedio }}</span>
+                    <span>Morosidad:</span>
+                    <span>{{ periodo.morosidad }}</span>
+                </li>
+            </ul>
+<!--             <div id="indicadores_alumno" *ngIf="line_ChartData" [chartData]="line_ChartData"  [chartOptions] = "line_ChartOptions" chartType="LineChart" GoogleChart></div> -->
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="nav nav-tabs">
+                <li><a href="#">Alertas</a></li>
+                <li class="active"><a href="#">Atenciones</a></li>
+                <li><a href="#">Beneficios</a></li>
+                <li><a href="#">Documentos</a></li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="table-responsive col-xs-7">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                           Descripción 
+                        </th>
+                        <th>
+                           Tipo de acción 
+                        </th>
+                        <th>
+                           Fecha 
+                        </th>
+                        <th>
+                           Atendido por 
+                        </th>
+                        <th>
+                           Comentario 
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Nivelación Calc 1
+                        </td>
+                        <td>
+                            Académica
+                        </td>
+                        <td>
+                            23-04-2016
+                        </td>
+                        <td>
+                            Prof. Matías Sanchez
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Atención Personal
+                        </td>
+                        <td>
+                            Psicológica
+                        </td>
+                        <td>
+                            15-04-2016
+                        </td>
+                        <td>
+                            Verónica Orellana
+                        </td>
+                        <td>
+                            Requiere apoyo académico
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Charla Motivacional
+                        </td>
+                        <td>
+                            Motivación
+                        </td>
+                        <td>
+                            08-07-2015
+                        </td>
+                        <td>
+                            Macarena Muñoz
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

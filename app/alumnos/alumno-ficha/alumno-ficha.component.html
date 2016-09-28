@@ -1,0 +1,249 @@
+<div *ngIf="alumno">
+    <md-grid-list cols="12" rowHeight="250px" style="background-color: #F0F5F1;">
+        <md-grid-tile colspan="6" rowspan="1">
+          <md-card class="ficha-title">
+            <md-card-title-group>
+              <md-card-subtitle>FICHA ESTUDIANTE</md-card-subtitle>
+              <md-card-title>{{ alumno.nombre | uppercase }}</md-card-title>
+            </md-card-title-group>
+            <img md-card-avatar class="custom-md-image"
+              src="app/alumnos/shared/images/placeholder-person.jpg"
+              title="{{ alumno.nombre | uppercase }}"
+              >
+          </md-card>
+        </md-grid-tile>
+
+
+        <md-grid-tile colspan="2" rowspan="1">
+          <md-card class="ficha-indicador">
+            <md-card-title-group>
+              <md-card-subtitle>DESERCIÓN</md-card-subtitle>
+              <md-card-title>68%</md-card-title>
+            </md-card-title-group>
+          </md-card>
+        </md-grid-tile>
+
+        <md-grid-tile colspan="2" rowspan="1">
+          <md-card class="ficha-indicador" style="padding-right: 50px;">
+            <md-card-title-group>
+              <md-card-subtitle>TITULACIÓN</md-card-subtitle>
+              <md-card-title style="color:#A54D5C;">33%</md-card-title>
+            </md-card-title-group>
+          </md-card>
+        </md-grid-tile>
+
+        <md-grid-tile colspan="2" rowspan="1">
+          <md-card class="ficha-indicador" style="padding-right:2px;">
+            <md-card-title-group>
+              <md-card-subtitle>PROMEDIO</md-card-subtitle>
+              <md-card-title style="color:#A54D5C;">4.5</md-card-title>
+            </md-card-title-group>
+          </md-card>
+        </md-grid-tile>
+
+
+        <md-grid-tile colspan="3" rowspan="1">
+          <md-card class="custom-second-row">
+            <md-card-title-group>
+              <md-card-subtitle>DATOS</md-card-subtitle>
+            </md-card-title-group>
+            <md-card-content>
+              <md-list dense>
+                <md-list-item>
+                  <p md-line>
+                    <span><md-icon svgSrc="/app/shared/images/contacto/perm_identity_black.svg"></md-icon></span>
+                    <span>{{ alumno.cedula }}</span>
+                  </p>
+                </md-list-item>
+                <md-list-item>
+                  <p md-line>
+                    <span><md-icon svgSrc="/app/shared/images/contacto/home_black.svg"></md-icon></span>
+                    <span>{{ alumno.direccion }}, {{ alumno.comuna }}</span>
+                  </p>
+                </md-list-item>
+                <md-list-item>
+                  <p md-line>
+                    <span><md-icon svgSrc="/app/shared/images/contacto/phone_black.svg"></md-icon></span>
+                    <span>{{ alumno.telefono }}</span>
+                  </p>
+                </md-list-item>
+                <md-list-item>
+                  <p md-line>
+                    <span><md-icon svgSrc="/app/shared/images/contacto/email_black.svg"></md-icon></span>
+                    <span>{{ alumno.email }}</span>
+                  </p>
+                </md-list-item>
+                <md-list-item>
+                  <p md-line>
+                    <span><md-icon svgSrc="/app/shared/images/contacto/cake_black.svg"></md-icon></span>
+                    <!-- <span>{{ alumno.atributos_alumno.edad }}</span> -->
+                    <span>26/08/1992</span>
+                  </p>
+                </md-list-item>
+              </md-list>
+            </md-card-content>
+          </md-card>
+        </md-grid-tile>
+        <md-grid-tile colspan="3" rowspan="1">
+          <md-card class="custom-second-row">
+            <md-card-title-group>
+              <md-card-subtitle>ALERTAS</md-card-subtitle>
+            </md-card-title-group>
+            <md-card-content>
+              <br/>
+              <div class="custom-alert-danger"> ALERTA ACTIVA <br/> MOTIVO: ECONÓMICO <br/><br/></div>
+            </md-card-content>
+            <md-card-actions>
+              <button md-button color="primary">INGRESAR ALERTA</button>
+              <button md-button color="primary">DESACTIVAR ALERTA</button>
+              <button md-button color="primary">INFORMAR DESERCIÓN</button>
+            </md-card-actions>
+          </md-card>
+        </md-grid-tile>
+        <md-grid-tile colspan="6" rowspan="1">
+          <md-card style="width:87%;" class="custom-second-row">
+            <md-card-title-group>
+              <md-card-subtitle>COMPORTAMIENTO HISTÓRICO</md-card-subtitle>
+            </md-card-title-group>
+            <div *ngIf="historialMatriculas">
+              <!-- <ul>
+                  <li *ngFor="let periodo of historialMatriculas">
+                      <span>Periodo:</span>
+                      <span>{{ periodo.periodo }}</span>
+                      <span>Asistencia:</span>
+                      <span>{{ periodo.asistencia }}</span>
+                      <span>Promedio:</span>
+                      <span>{{ periodo.promedio }}</span>
+                      <span>Morosidad:</span>
+                      <span>{{ periodo.morosidad }}</span>
+                  </li>
+              </ul> -->
+            <div id="indicadores_alumno" *ngIf="line_ChartData" [chartData]="line_ChartData"  [chartOptions]="line_ChartOptions" chartType="LineChart" GoogleChart></div>
+            </div>
+          </md-card>
+        </md-grid-tile>
+        <md-grid-tile colspan="12" rowspan="2">
+          <md-card style="top: 10px; width: 94%;">
+            <md-tab-group [selectedIndex]="2">
+              <md-tab>
+                <template md-tab-label>DETALLE DATOS</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>ALERTAS</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>ATENCIONES</template>
+                <template md-tab-content>
+                  <br/>
+                  <br/>
+                  <br/>
+                  <table class="table table-hover table-mc-light-blue">
+                    <thead>
+                        <tr>
+                            <th>
+                               Descripción 
+                            </th>
+                            <th>
+                               Tipo de acción 
+                            </th>
+                            <th>
+                               Fecha 
+                            </th>
+                            <th>
+                               Atendido por 
+                            </th>
+                            <th>
+                               Comentario 
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Nivelación Calc 1
+                            </td>
+                            <td>
+                                Académica
+                            </td>
+                            <td>
+                                23-04-2016
+                            </td>
+                            <td>
+                                Prof. Matías Sanchez
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Atención Personal
+                            </td>
+                            <td>
+                                Psicológica
+                            </td>
+                            <td>
+                                15-04-2016
+                            </td>
+                            <td>
+                                Verónica Orellana
+                            </td>
+                            <td>
+                                Requiere apoyo académico
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Charla Motivacional
+                            </td>
+                            <td>
+                                Motivación
+                            </td>
+                            <td>
+                                08-07-2015
+                            </td>
+                            <td>
+                                Macarena Muñoz
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>NOTAS</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>ASISTENCIA</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+
+              <md-tab>
+                <template md-tab-label>DEUDA</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+              <md-tab>
+                <template md-tab-label>DOCUMENTOS</template>
+                <template md-tab-content>
+                  <p>...</p>
+                </template>
+              </md-tab>
+            </md-tab-group>
+          </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
